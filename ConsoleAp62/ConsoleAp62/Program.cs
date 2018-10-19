@@ -11,7 +11,7 @@ namespace ConsoleAp62
         static void Main(string[] args)
         {
             Console.WriteLine("Hello2");
-            Console.WriteLine("Hello3");
+            Console.WriteLine("Bonjouor 3");
         }
     }
 }
