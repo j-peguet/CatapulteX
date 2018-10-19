@@ -12,6 +12,7 @@ namespace ConsoleAp62
         {
             Console.WriteLine("Hello2");
             Console.WriteLine("Bonjouor 3");
+            Console.ReadKey();
         }
     }
 }
