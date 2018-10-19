@@ -10,9 +10,13 @@ namespace ConsoleAp62
     {
         static void Main(string[] args)
         {
+<<<<<<< Updated upstream
             Console.WriteLine("Hello2");
             Console.WriteLine("Bonjouor 3");
             Console.ReadKey();
+=======
+
+>>>>>>> Stashed changes
         }
     }
 }
