@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleAp62
+namespace ConsoleAp62.Classes
 {
-    class Program
+    class Arm
     {
-        static void Main(string[] args)
-        {
-        
-
-        }
     }
 }
