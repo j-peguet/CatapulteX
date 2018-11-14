@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,13 +10,9 @@ namespace ConsoleAp62
     {
         static void Main(string[] args)
         {
-<<<<<<< Updated upstream
             Console.WriteLine("Hello2");
             Console.WriteLine("Bonjouor 3");
             Console.ReadKey();
-=======
-
->>>>>>> Stashed changes
         }
     }
 }
