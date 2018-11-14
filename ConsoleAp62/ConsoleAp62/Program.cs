@@ -10,9 +10,8 @@ namespace ConsoleAp62
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello2");
-            Console.WriteLine("Bonjouor 3");
-            Console.ReadKey();
+        
+
         }
     }
 }
