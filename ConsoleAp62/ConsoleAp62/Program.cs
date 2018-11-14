@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleAp62.Classes;
 
 namespace ConsoleAp62
 {
@@ -10,8 +11,12 @@ namespace ConsoleAp62
     {
         static void Main(string[] args)
         {
-        
+            Catapult catapult = new Catapult(20,25);
+            catapult.getArm().SetPartsHP(catapult.getArm(), 10);
+            Console.WriteLine(catapult.getArm().GetPartsHP(catapult.getArm()));
+            
 
+            Console.ReadKey();
         }
     }
 }

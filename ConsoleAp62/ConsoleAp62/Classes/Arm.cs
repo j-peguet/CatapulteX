@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleAp62.Classes
 {
-    class Arm
+    public class Arm : Parts
     {
+        public Arm(int hp)
+        {
+            this.HP = hp;
+        }
     }
 }

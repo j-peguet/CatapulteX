@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleAp62.Classes
 {
-    class Trigger
+    class Trigger : Parts
     {
+        public Trigger(int hp)
+        {
+            this.HP = hp;
+        }
     }
 }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleAp62.Classes
 {
-    class Beam
+    class Beam : Parts
     {
+        public Beam(int hp)
+        {
+            this.HP = hp;
+        }
     }
 }

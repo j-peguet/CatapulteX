@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleAp62.Classes
 {
-    class Rope
+    class Rope : Parts
     {
+        public Rope(int hp)
+        {
+            this.HP = hp;
+        }
     }
 }
