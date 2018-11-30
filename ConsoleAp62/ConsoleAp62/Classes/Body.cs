@@ -8,5 +8,6 @@ namespace ConsoleAp62.Classes
 {
     class Body
     {
+      
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleAp62.Classes
 {
-    class Rope : Parts
+   public class Rope : Parts
     {
         public Rope(int hp)
         {

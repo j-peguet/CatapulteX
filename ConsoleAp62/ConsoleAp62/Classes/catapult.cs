@@ -15,16 +15,36 @@ namespace ConsoleAp62.Classes
         private Body body;
         private Trigger trigger;
 
-        public Catapult(int Arm_HP, int Spoon_HP)
+        public Catapult(int Arm_HP, int Spoon_HP,int Beam_HP, int Trigger_HP, int Rope_HP )
         {
             arm = new Arm(Arm_HP);
             spoon = new Spoon(Spoon_HP);
+            beam = new Beam(Beam_HP);
+            trigger = new Trigger(Trigger_HP);
+            rope = new Rope(Rope_HP);
 
         }
         public Arm getArm()
         {
             return this.arm;
         }
+
+        public Spoon getSpoon()
+        {
+            return this.spoon;
+        }
+
+        public Beam getBeam()
+        {
+            return this.beam;
+        }
+
+        public Trigger getTrigger()
+        {
+            return this.trigger;
+        }
+
+
 
     }
 }
