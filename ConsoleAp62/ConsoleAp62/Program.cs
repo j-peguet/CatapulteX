@@ -14,7 +14,7 @@ namespace ConsoleAp62
             Catapult catapult = new Catapult(20,25);
             catapult.getArm().SetPartsHP(catapult.getArm(), 10);
             Console.WriteLine(catapult.getArm().GetPartsHP(catapult.getArm()));
-            
+           
 
             Console.ReadKey();
         }
