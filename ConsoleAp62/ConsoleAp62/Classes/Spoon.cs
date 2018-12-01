@@ -19,7 +19,7 @@ namespace ConsoleAp62.Classes
             public bool flame;
         }
 
-        public Rock ChoisirBoulet()
+        public void ChoisirBoulet()
         {
             
             Rock boulet = new Rock();
@@ -43,7 +43,7 @@ namespace ConsoleAp62.Classes
             // Pause du chargement
 
             System.Threading.Thread.Sleep(pause);
-            return boulet;
+            
 
         }
 

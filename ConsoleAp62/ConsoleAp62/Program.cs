@@ -11,7 +11,7 @@ namespace ConsoleAp62
     {
         static void Main(string[] args)
         {
-            Catapult catapult = new Catapult(20,25);
+            Catapult catapult = new Catapult(20, 25,30,40,30);
             catapult.getArm().SetPartsHP(catapult.getArm(), 10);
             Console.WriteLine(catapult.getArm().GetPartsHP(catapult.getArm()));
            
