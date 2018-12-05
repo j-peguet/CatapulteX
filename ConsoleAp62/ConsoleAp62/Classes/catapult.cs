@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,6 +44,13 @@ namespace ConsoleAp62.Classes
         public Trigger getTrigger()
         {
             return this.trigger;
+        }
+
+        public string Value()
+        {
+            var client = new WebClient { Credentials = new NetworkCredential("groupe8", "WWTPnLfg") };
+            var value = client.DownloadString("https://dev18504.service-now.com/api/20557/catapulte/getlife2?target=beam");
+            return value;
         }
 
 
