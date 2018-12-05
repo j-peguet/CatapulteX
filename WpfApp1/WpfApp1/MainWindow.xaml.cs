@@ -87,8 +87,11 @@ namespace WpfApp1
                 dp.Children.Add(mesbuttons[i]);
                 DockPanel.SetDock(mesbuttons[i], Dock.Bottom);
             }
+            DBConnect dBConnect = new DBConnect();
+            
+            tb.Text = dBConnect.Select().ToString();
+            dp.Children.Add(tb);
 
-           
             this.Content = dp;
             InitializeComponent();
         }

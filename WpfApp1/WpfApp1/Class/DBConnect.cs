@@ -43,7 +43,7 @@ namespace WpfApp1.Class
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
             connection = new MySqlConnection(connectionString);
-            OpenConnection();
+            //OpenConnection();
         }
 
         //open connection to database

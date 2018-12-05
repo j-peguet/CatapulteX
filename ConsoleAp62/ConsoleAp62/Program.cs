@@ -16,21 +16,14 @@ namespace ConsoleAp62
         {
             public int life { get; set; }
         }
-        static void Main(string[] args)
+        static void Main()
         {
-            Catapult catapult = new Catapult(20,25,15,17,56);
-            catapult.getArm().SetPartsHP(catapult.getArm(), 10);
-            Console.WriteLine(catapult.getArm().GetPartsHP(catapult.getArm()));
+            Catapult catapult = new Catapult();
 
-            Result json = Newtonsoft.Json.JsonConvert.DeserializeObject<Result>(catapult.Value());
-            var Text = JsonConvert.DeserializeObject(catapult.Value());
+            Console.WriteLine(catapult.getRope().GetPartsHP(catapult.getRope()));
+            catapult.getRope().SetPartsHP(catapult.getRope(), 10);
+            Console.WriteLine(catapult.getRope().GetPartsHP(catapult.getRope()));
 
-            //JsonTextReader reader = new JsonTextReader(catapult.Value());
-
-            Console.WriteLine(Text);
-            //var jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(obj);
-            //Newtonsoft.Json.JsonConvert.SerializeObject(catapult.Value())
-            Console.WriteLine(catapult.Value());
             Console.Write("Fini");
             Console.ReadKey();
         }
