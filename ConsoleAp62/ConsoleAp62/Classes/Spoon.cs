@@ -4,36 +4,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+
 namespace ConsoleAp62.Classes
 {
-  public  class Spoon : Parts
+    public class Spoon : Parts
     {
+
+        public int puissance;
+
         public Spoon(int hp)
         {
             this.HP = hp;
         }
 
-       public struct Rock
-        {
-            public int masse;
-            public bool flame;
-        }
+         public struct Rock
+          {
+              public int masse;
+              public bool flame;
+        }  
+
 
         public void ChoisirBoulet()
         {
-            
+
+            puissance = 0;
             Rock boulet = new Rock();
             // Choix de la masse du boulet 
+
             Random rnd = new Random();
             int minPoid = 40;
             int maxPoid = 200;
+
             boulet.masse = rnd.Next(minPoid, maxPoid);
+           
             if (rnd.Next(1, 10) == 3) {
 
-                boulet.flame = true;
+                  boulet.flame = true;
+                  puissance = 500;
+
             }
             else {
-                boulet.flame = false;
+                  boulet.flame = false;
+              
             }
 
             // Calcul du temps de chargement
@@ -43,7 +57,10 @@ namespace ConsoleAp62.Classes
             // Pause du chargement
 
             System.Threading.Thread.Sleep(pause);
-            
+
+            // Definition Puissance du Spoon
+
+            puissance = puissance + boulet.masse;      
 
         }
 

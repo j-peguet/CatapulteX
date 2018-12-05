@@ -54,6 +54,15 @@ namespace ConsoleAp62.Classes
         }
 
 
+        public void tir()
+        {
+            spoon.ChoisirBoulet();
+            rope.LowerSpoon();
+            trigger.verify();
+            arm.move();
+        }
+
+
 
     }
 }

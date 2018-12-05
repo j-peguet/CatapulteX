@@ -12,5 +12,11 @@ namespace ConsoleAp62.Classes
         {
             this.HP = hp;
         }
+
+        public int Launch()
+        {
+
+            return 0;
+        }
     }
 }

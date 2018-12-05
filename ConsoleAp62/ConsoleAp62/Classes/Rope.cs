@@ -12,6 +12,8 @@ namespace ConsoleAp62.Classes
     {
         // False = Corde PAS Tendu , True = Corde Tendu
         private bool state;
+        private int puissance;
+
 
         public Rope(int hp)
         {
@@ -21,15 +23,24 @@ namespace ConsoleAp62.Classes
 
         public void LowerSpoon()
         {
-            if (state == false)
-            {
-                
-            }
-
-  
-
-        
+            double abaissage = 1000;
+            // Cast Explicit
+            int pause = (int)abaissage;
+            // Pause abaissage
+            System.Threading.Thread.Sleep(pause);
+            TendTheRope();
         }
+
+        private void TendTheRope()
+        {
+            Random rnd = new Random();
+            int minPuiss = 100;
+            int maxPuiss = 500;
+            this.puissance = rnd.Next(minPuiss, maxPuiss);
+        }
+
+
+
 
 
 
