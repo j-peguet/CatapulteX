@@ -10,20 +10,20 @@ namespace ConsoleAp62.Classes
 {
     public class Catapult
     {
-        private Spoon spoon;
-        private Rope rope;
-        private Beam beam;
-        private Arm arm;
+        private Spoon spoon = new Spoon(0);
+        private Rope rope = new Rope(0) ;
+        private Beam beam = new Beam(0);
+        private Arm arm = new Arm(0);
         private Body body;
-        private Trigger trigger;
+        private Trigger trigger = new Trigger(0);
 
-        public Catapult(int Arm_HP, int Spoon_HP,int Beam_HP, int Trigger_HP, int Rope_HP )
+        public Catapult()
         {
-            arm = new Arm(Arm_HP);
-            spoon = new Spoon(Spoon_HP);
-            beam = new Beam(Beam_HP);
-            trigger = new Trigger(Trigger_HP);
-            rope = new Rope(Rope_HP);
+            arm = new Arm(getArm().Value("arm"));
+            spoon = new Spoon(getSpoon().Value("spoon"));
+            beam = new Beam(getBeam().Value("beam"));
+            trigger = new Trigger(getTrigger().Value("trigger"));
+            rope = new Rope(getRope().Value("rope"));
 
         }
         public Arm getArm()
@@ -45,12 +45,9 @@ namespace ConsoleAp62.Classes
         {
             return this.trigger;
         }
-
-        public string Value()
+        public Rope getRope()
         {
-            var client = new WebClient { Credentials = new NetworkCredential("groupe8", "WWTPnLfg") };
-            var value = client.DownloadString("https://dev18504.service-now.com/api/20557/catapulte/getlife2?target=beam");
-            return value;
+            return this.rope;
         }
 
 
