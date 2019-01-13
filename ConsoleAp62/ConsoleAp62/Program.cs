@@ -12,19 +12,46 @@ namespace ConsoleAp62
 {
     class Program
     {
-        public class Result
-        {
-            public int life { get; set; }
-        }
+
         static void Main()
         {
+            //Création de la catapulte principale
             Catapult catapult = new Catapult();
 
-            Console.WriteLine(catapult.getRope().GetPartsHP(catapult.getRope()));
-            catapult.getRope().SetPartsHP(catapult.getRope(), 10);
-            Console.WriteLine(catapult.getRope().GetPartsHP(catapult.getRope()));
+            //Test que l'exception est bien levée
+            Catapult catapult_test = new Catapult();
+            try
+            {
+                catapult_test.getRope().SetPartsHP(catapult_test.getRope(), 0);
+            }
+            catch (BrokenException be)
+            {
+                Console.WriteLine("Broken Exception " + be.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Fin de la modification");
+            }
 
-            Console.Write("Fini");
+            //Test tir de la catapulte
+            try
+            {
+                catapult.tir();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Fin du tir");
+            }
+
+            Console.WriteLine("Fini");
             Console.ReadKey();
         }
     }

@@ -10,20 +10,42 @@ namespace ConsoleAp62.Classes
 {
     public class Catapult
     {
-        private Spoon spoon = new Spoon(0);
-        private Rope rope = new Rope(0) ;
-        private Beam beam = new Beam(0);
-        private Arm arm = new Arm(0);
+        //Chaque partie de la catapulte est initialidé à la création
+        private Spoon spoon = new Spoon(1);
+        private Rope rope = new Rope(1);
+        private Beam beam = new Beam(1);
+        private Arm arm = new Arm(1);
         private Body body;
-        private Trigger trigger = new Trigger(0);
+        private Trigger trigger = new Trigger(1);
 
         public Catapult()
         {
-            arm = new Arm(getArm().Value("arm"));
-            spoon = new Spoon(getSpoon().Value("spoon"));
-            beam = new Beam(getBeam().Value("beam"));
-            trigger = new Trigger(getTrigger().Value("trigger"));
-            rope = new Rope(getRope().Value("rope"));
+            try
+            {
+                Console.WriteLine("Fabrication de la catapulte");
+                arm = new Arm(getArm().GetPartsHP("arm"));
+                Console.WriteLine("Arm pret !");
+                spoon = new Spoon(getSpoon().GetPartsHP("spoon"));
+                Console.WriteLine("Spoon pret !");
+                beam = new Beam(getBeam().GetPartsHP("beam"));
+                Console.WriteLine("Beam pret !");
+                trigger = new Trigger(getTrigger().GetPartsHP("trigger"));
+                Console.WriteLine("Trigger pret !");
+                rope = new Rope(getRope().GetPartsHP("rope"));
+                Console.WriteLine("Rope pret !");
+            }
+            catch (BrokenException be)
+            {
+                Console.WriteLine("Broken Exception " + be.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Catapulte construite ! A l'ATTAQUE !!");
+            }
 
         }
         public Arm getArm()
@@ -50,16 +72,22 @@ namespace ConsoleAp62.Classes
             return this.rope;
         }
 
-
+        //Tir de la catapulte
         public void tir()
         {
-            spoon.ChoisirBoulet();
-            rope.LowerSpoon();
-            trigger.verify();
-            arm.move();
+            if (trigger.verify() == true)
+            {
+                int boulet = spoon.ChoisirBoulet();
+                int tense = rope.LowerSpoon();
+                int velocity  = arm.move();
+                arm.LaunchSpoon(boulet, tense, velocity);
+                Console.WriteLine("FEU !!");
+            }
+            else
+            {
+                trigger.verify();
+                Console.WriteLine("J'abaisse le levier");
+            }
         }
-
-
-
     }
 }

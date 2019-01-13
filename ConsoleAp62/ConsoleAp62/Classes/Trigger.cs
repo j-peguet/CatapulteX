@@ -9,29 +9,30 @@ namespace ConsoleAp62.Classes
    
    public class Trigger : Parts
     {
-        private bool etat_levier;
+        private bool etat_levier = true;
         public Trigger(int hp)
         {
             this.HP = hp;
+            if (hp <= 0)
+            {
+                throw new BrokenException(this + "!");
+            }
         }
 
-        public void verify()
+        public Boolean verify()
         {
             if(etat_levier == true)
             {
-                Console.WriteLine("FEU !!");
+                etat_levier = false;
+                return true;
             }
             else
             {
-                Console.WriteLine("J'abaisse le levier");
-                verify();
+                etat_levier = true;
+                return false;
             }
 
         }
-
-
-
-
 
     }
 }

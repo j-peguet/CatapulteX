@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
-
 namespace ConsoleAp62.Classes
 {
     public class Spoon : Parts
@@ -17,16 +14,20 @@ namespace ConsoleAp62.Classes
         public Spoon(int hp)
         {
             this.HP = hp;
+            if (hp <= 0)
+            {
+                throw new BrokenException(this + "!");
+            }
         }
 
          public struct Rock
-          {
-              public int masse;
-              public bool flame;
+        {
+            public int masse;
+            public bool flame;
         }  
 
 
-        public void ChoisirBoulet()
+        public int ChoisirBoulet()
         {
 
             puissance = 0;
@@ -60,12 +61,9 @@ namespace ConsoleAp62.Classes
 
             // Definition Puissance du Spoon
 
-            puissance = puissance + boulet.masse;      
+            return puissance = puissance + boulet.masse;      
 
-        }
-
-        
-
+        }  
 
     }
 }

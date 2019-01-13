@@ -56,6 +56,7 @@
     <Compile Include="Classes\Beam.cs" />
     <Compile Include="Classes\Arm.cs" />
     <Compile Include="Classes\Body.cs" />
+    <Compile Include="Classes\BrokenException.cs" />
     <Compile Include="Classes\Catapult.cs" />
     <Compile Include="Classes\Parts.cs" />
     <Compile Include="Classes\Trigger.cs" />

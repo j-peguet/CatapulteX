@@ -11,6 +11,10 @@ namespace ConsoleAp62.Classes
         public Beam(int hp)
         {
             this.HP = hp;
+            if (hp <= 0)
+            {
+                throw new BrokenException(this + "!");
+            }
         }
 
         public int Launch()
